@@ -76,7 +76,7 @@ Content-Type: application/json
 
 {
   "seller_id": "seller_123",
-  "amount": 100.00,
+  "amount": 10000, // Amount in cents
   "currency": "USD",
   "payment_provider": "stripe",
   "customer_id": "cust_456",
@@ -89,13 +89,13 @@ Content-Type: application/json
 {
   "transaction_id": "txn_789",
   "seller_id": "seller_123",
-  "gross_amount": "100.00",
+  "gross_amount": 10000, // In cents
   "currency": "USD",
   "payment_provider": "stripe",
-  "payment_provider_fee": "3.20",
-  "commission_rate": "0.07",
-  "commission_amount": "7.00",
-  "net_amount": "89.80",
+  "payment_provider_fee": 320, // In cents
+  "commission_rate": 0.07,
+  "commission_amount": 700, // In cents
+  "net_amount": 8980,
   "status": "completed",
   "created_at": "2024-01-15T10:30:00Z"
 }
@@ -117,9 +117,9 @@ GET /api/v1/sellers/seller_123/commission-summary?period=monthly
   "seller_id": "seller_123",
   "period": "2024-01",
   "total_transactions": 150,
-  "total_gross_amount": "15000.00",
-  "total_commission": "1050.00",
-  "total_net_amount": "13950.00",
+  "total_gross_amount": 1500000, // In cents
+  "total_commission": 105000, // In cents
+  "total_net_amount": 1395000, // In cents
   "currency": "USD"
 }
 ```
